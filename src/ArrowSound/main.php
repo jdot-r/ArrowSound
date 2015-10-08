@@ -11,7 +11,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\entity\ProjectileHitEvent;
 use pocketmine\entity\Arrow;
 use pocketmine\Player;
-use pocketmine\level\sound\ClickSound;
+use pocketmine\level\sound\AnvilFallSound;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\level\particle\AngryVillagerParticle;
@@ -31,7 +31,7 @@ class Main extends PluginBase implements Listener{
         if($shooter instanceof EntityDamageByEntityEvent){
             $shooter = $shooter->getDamager();
         if($shooter instanceof Player){
-            $level->addSound(new ClickSound($shooter->getLocation()));
+            $level->addSound(new AnvilFallSound($shooter->getLocation()));
             $victim->getLevel()->addParticle(new AngryVillagerParticle(self::randVector($entity),(mt_rand()/mt_getrandmax())*2));
         }
         }
