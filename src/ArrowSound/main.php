@@ -25,15 +25,9 @@ class Main extends PluginBase implements Listener{
         $this->getLogger()->info('Deactivated');
     }
     
-    public function onArrowHit(ProjectileHitEvent $event){
-        $victim = $event->getEntity();
-        $shooter = $victim->getLastDamageCause();
-        if($shooter instanceof EntityDamageByEntityEvent){
-            $shooter = $shooter->getDamager();
-        if($shooter instanceof Player){
-            $level->addSound(new AnvilFallSound($shooter->getLocation()));
-            $victim->getLevel()->addParticle(new AngryVillagerParticle(self::randVector($entity),(mt_rand()/mt_getrandmax())*2));
-        }
-        }
-    }
-}    
+    public function onHit(EntityDamageEvent $ev){
+if($ev instanceof EntityDamageByChildEntityEvent){
+$ev->getEntity()->getLevel()->addSound(new AnvilFallSound($ev->getEntity()->getLocation()));
+}
+}
+}
