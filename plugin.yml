@@ -3,5 +3,5 @@ name: ArrowSound
 author: CaptainKenji17
 api: [1.12.0]
 version: 1.0
-main: ArrowSound\main
+main: ArrowSound\Main
 description: Makes Sound when you hit player with an arrow
