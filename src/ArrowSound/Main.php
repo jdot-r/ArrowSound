@@ -14,6 +14,7 @@ use pocketmine\Player;
 use pocketmine\level\sound\AnvilFallSound;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
+use pocketmine\event\entity\EntityDamageByChildEntityEvent;
 
 class Main extends PluginBase implements Listener{
     
