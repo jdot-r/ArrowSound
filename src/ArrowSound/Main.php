@@ -29,6 +29,8 @@ class Main extends PluginBase implements Listener{
     public function onHit(EntityDamageEvent $ev){
 if($ev instanceof EntityDamageByChildEntityEvent){
 $ev->getEntity()->getLevel()->addSound(new AnvilFallSound($ev->getEntity()->getLocation()));
+//SPACE
+$ev->getEntity()->getDamager()->getLevel()->addSound(new AnvilFallSound($ev->getEntity()->getDamager()->getLocation()));
 }
 }
 }
