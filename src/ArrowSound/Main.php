@@ -14,11 +14,11 @@ use pocketmine\Player;
 use pocketmine\level\sound\AnvilFallSound;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
-use pocketmine\level\particle\AngryVillagerParticle;
 
 class Main extends PluginBase implements Listener{
     
     public function onEnable(){
+    $this->getServer()->getPluginManager()->registerEvents($this,$this);
         $this->getLogger()->info('Activated');
     }
     public function onDisable(){
